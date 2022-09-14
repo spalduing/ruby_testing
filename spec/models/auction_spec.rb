@@ -1,11 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Auction, type: :model do
-  # pending 'add some examples to (or delete) #{__FILE__}'
+  let(:seller){
+    User.new(email: 'jane@doe.com', password: 'pw1234')
+  }
   subject { described_class.new(title: 'Anything',
                                 description: 'Anything',
                                 start_date: DateTime.now,
-                                end_date: DateTime.now + 1.week,)
+                                end_date: DateTime.now + 1.week,
+                                user_id: 1)
   }
 
   it 'is valid with valid attributes' do
@@ -34,5 +37,6 @@ RSpec.describe Auction, type: :model do
 
   describe 'Associations' do
     it { should belong_to(:user).without_validating_presence }
+    it { should have_many(:bids) }
   end
 end
