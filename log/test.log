@@ -248,3 +248,39 @@
   [1m[36mBid Load (0.1ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = ? ORDER BY "bids"."id" DESC LIMIT ?[0m  [["auction_id", 1], ["LIMIT", 1]]
   [1m[36mBid Load (0.0ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = ? ORDER BY "bids"."id" DESC LIMIT ?[0m  [["auction_id", 1], ["LIMIT", 1]]
   [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (20.4ms)[0m  [1m[32mINSERT INTO "users" ("password", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["password", "[FILTERED]"], ["email", "jane@doe.com"], ["created_at", "2022-09-14 05:12:04.122938"], ["updated_at", "2022-09-14 05:12:04.122938"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAuction Create (0.2ms)[0m  [1m[32mINSERT INTO "auctions" ("start_date", "end_date", "title", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2022-09-14 05:12:04.113504"], ["end_date", "2022-09-21 05:12:04.113537"], ["title", "Anything"], ["description", "Lorem ipsum"], ["created_at", "2022-09-14 05:12:04.153183"], ["updated_at", "2022-09-14 05:12:04.153183"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("password", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["password", "[FILTERED]"], ["email", "john@doe.com"], ["created_at", "2022-09-14 05:12:04.155444"], ["updated_at", "2022-09-14 05:12:04.155444"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = ? ORDER BY "bids"."id" DESC LIMIT ?[0m  [["auction_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bidder_id", "auction_id", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["bidder_id", 2], ["auction_id", 1], ["amount", 100], ["created_at", "2022-09-14 05:12:04.182391"], ["updated_at", "2022-09-14 05:12:04.182391"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mBid Load (0.1ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = ? ORDER BY "bids"."id" DESC LIMIT ?[0m  [["auction_id", 1], ["LIMIT", 1]]
+  [1m[36mBid Load (0.1ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = ? ORDER BY "bids"."id" DESC LIMIT ?[0m  [["auction_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("password", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["password", "[FILTERED]"], ["email", "jane@doe.com"], ["created_at", "2022-09-14 05:12:04.245725"], ["updated_at", "2022-09-14 05:12:04.245725"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("start_date", "end_date", "title", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2022-09-14 05:12:04.244386"], ["end_date", "2022-09-21 05:12:04.244428"], ["title", "Anything"], ["description", "Lorem ipsum"], ["created_at", "2022-09-14 05:12:04.250443"], ["updated_at", "2022-09-14 05:12:04.250443"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("password", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["password", "[FILTERED]"], ["email", "john@doe.com"], ["created_at", "2022-09-14 05:12:04.253216"], ["updated_at", "2022-09-14 05:12:04.253216"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mBid Load (0.1ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = ? ORDER BY "bids"."id" DESC LIMIT ?[0m  [["auction_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("bidder_id", "auction_id", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["bidder_id", 2], ["auction_id", 1], ["amount", 100], ["created_at", "2022-09-14 05:12:04.256934"], ["updated_at", "2022-09-14 05:12:04.256934"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mBid Load (0.1ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = ? ORDER BY "bids"."id" DESC LIMIT ?[0m  [["auction_id", 1], ["LIMIT", 1]]
+  [1m[36mBid Load (0.1ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = ? ORDER BY "bids"."id" DESC LIMIT ?[0m  [["auction_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mrollback transaction[0m
